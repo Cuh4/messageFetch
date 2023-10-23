@@ -8,7 +8,7 @@ import json
 import asyncio
 
 import config
-from src import helpers
+import helpers
 
 # // ---- Variables
 # configurables
