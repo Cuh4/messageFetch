@@ -87,7 +87,7 @@ async def on_ready():
 
     with open(path, "w") as f:
         f.write(json.dumps(
-            obj = [message.content for message in messages],
+            obj = [f"{helpers.utils.formattedName(message.author)}: {message.content}" for message in messages],
             indent = 5
         ))
         
