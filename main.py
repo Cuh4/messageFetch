@@ -84,6 +84,7 @@ async def on_ready():
     # dump
     slash = "/" if config.dumpFilePath != "" else ""
     path = f"{config.dumpFilePath}{slash}{config.dumpFileName}.json"
+
     with open(path, "w") as f:
         f.write(json.dumps(
             obj = [message.content for message in messages],
