@@ -25,14 +25,14 @@ client = discord.Client(
 )
 
 # // ---- Functions
-async def fetchMessages(channel: discord.TextChannel, amountToFetch: int, excludeMessagesWithAttachments: bool = False) -> list[discord.Message]:
+async def fetchMessages(channel: discord.TextChannel, amountToFetch: int, excludeMessagesWithAttachments: bool = False, excludeEmptyMessages: bool = False) -> list[discord.Message]:
     messages = []
 
     async for message in channel.history(limit = amountToFetch):
         if excludeMessagesWithAttachments and len(message.attachments) != 0:
             continue
         
-        if message.content == "":
+        if excludeEmptyMessages and message.content == "":
             continue
         
         messages.append(message)
@@ -68,7 +68,7 @@ async def on_ready():
     
     # fetch messages
     try:
-        messages = await fetchMessages(channel, amount_to_fetch, config.excludeMessagesWithAttachments)
+        messages = await fetchMessages(channel, amount_to_fetch, config.excludeMessagesWithAttachments, config.excludeEmptyMessages)
     except Exception as e:
         # failed, so notify
         helpers.prettyprint.error(f"Failed to fetch messages. Error: {str(e)}")
