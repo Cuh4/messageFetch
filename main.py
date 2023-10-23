@@ -104,4 +104,4 @@ async def on_ready():
     return await closeBot(4)
     
 # // run
-client.run(config.token)
+client.run(config.token, log_handler = None)
