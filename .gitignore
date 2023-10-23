@@ -1,0 +1,7 @@
+# both files contain sensitive information (bot tokens, private channel messages, etc). don't want that stuff getting leaked :O
+config.py
+messages.json
+
+# other exclusions
+/__pycache__
+/src/helpers/__pycache__
