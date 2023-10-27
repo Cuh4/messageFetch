@@ -3,13 +3,6 @@
 ### **overview**
 rushed bot that fetches x amount of messages in the desired channel and dumps the contents in a .json file
 
-### **requirements**
-- **Python**
-- **Discord** (Python Package)
-```
-pip install discord
-```
-
 ### **how to use**
 1) edit `sampleconfig.py` to your liking. rename to `config.py` once done
 
