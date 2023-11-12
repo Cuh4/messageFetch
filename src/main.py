@@ -100,7 +100,7 @@ async def on_ready():
         )
     
     # close bot after completion
-    helpers.prettyprint.warn("Completed!")
+    helpers.prettyprint.success("Completed!")
     return await closeBot(4)
     
 # // run
